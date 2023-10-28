@@ -87,7 +87,7 @@ function UserOrderList({ order }) {
             <RiLineHeight size={20} color="#14b8a6"/>
           </button>
 
-          {openOrderItem === id &&(
+          {openOrderItem === id && (
             <div className="bg-gray-100">
               {items.map(item => { 
                   return (
