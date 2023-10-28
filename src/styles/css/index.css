@@ -68,6 +68,12 @@
   .btn-order_delete:hover {
     @apply text-gray-200 border-gray-200;
   }
+  .btn_register {
+    @apply text-teal-500 border-teal-500;
+  }
+  .btn_register:hover {
+    @apply text-teal-400 border-teal-400;
+  }
 
   .input_set {
     @apply block w-full rounded-md border-0 py-1.5 pl-4 placeholder:text-sm 

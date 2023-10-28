@@ -12,6 +12,13 @@ function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const { setAccountSet } = useContext(HeaderContext)
 
+  const [clientMessage, setClientMessage] = useState('')
+  const [userName, setUserName] = useState('')
+  const [password1, setPassword1] = useState('')
+  const [password2, setPassword2] = useState('')
+  const [clientName, setClientName] = useState('')
+  const [email, setEmail] = useState('')
+
   const apiurl = "http://127.0.0.1:8000/api/v1"
   
   // 登入
@@ -30,9 +37,56 @@ function AuthProvider({ children }) {
       SetCurrentUser(jwt_decode(data.access))                     // 解碼 access token
       localStorage.setItem("authToken", JSON.stringify(data));    // 將 token儲存到 localStorage
       navigate('/')
+      cleanForm()
     } else {
       alert('無法取得連線')
     }
+  }
+
+  // 註冊
+  const registerUser = async (e) => {
+    e.preventDefault()
+
+    if (e.target.password1.value !== e.target.password2.value) {
+      setClientMessage('請確認密碼是否相同')
+    } else if (e.target.password1.value.length < 8) {
+      setClientMessage('密碼長度最少8碼英數字')
+    } else {
+      let response = await fetch(`${apiurl}/client_set/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "username": e.target.userName.value,
+          "password1": e.target.password1.value,
+          "password2": e.target.password2.value,
+          "name": e.target.clientName.value,
+          "email": e.target.email.value,
+        })
+      })
+      const data = await response.json()
+      if (response.status === 201) {
+        setClientMessage(data['message'])
+        cleanForm()
+        navigate('/login')
+      } else {
+        setClientMessage(data['message'])
+      }
+    }
+    
+    setTimeout(() => {
+      setClientMessage('')
+    }, 2000)
+  }
+
+  // 清除註冊表單
+  const cleanForm = () => {
+    setUserName('')
+    setPassword1('')
+    setPassword2('')
+    setClientName('')
+    setEmail('')
   }
 
   // 登出
@@ -85,10 +139,23 @@ function AuthProvider({ children }) {
   },[authToken, loading, updateToken])
 
   const contextData = {
-    loginUser: loginUser,
-    logoutUser: logoutUser,
-    currentUser: currentUser,
-    authToken: authToken,
+    currentUser : currentUser,
+    authToken : authToken,
+    clientMessage: clientMessage,
+    userName : userName,
+    setUserName : setUserName,
+    password1 : password1,
+    setPassword1 : setPassword1,
+    password2 : password2,
+    setPassword2 : setPassword2,
+    clientName : clientName, 
+    setClientName : setClientName,
+    email : email,
+    setEmail : setEmail,
+
+    loginUser : loginUser,
+    logoutUser : logoutUser,
+    registerUser : registerUser,
   }
 
   return (

@@ -11,6 +11,7 @@ import CheckDone from './pages/checkout/CheckDone';
 import UserDashboard from './pages/user_profile/UserDashboard';
 import UserAccount from './pages/user_profile/UserAccount';
 import UserOrder from './pages/user_profile/UserOrder';
+import Register from './pages/Register';
 
 import AuthProvider from './context/AuthContext';
 import ProductProvider from './context/ProductContext';
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/" element={<Dashboard />}>
                       <Route index element={<Home />}/>
                       <Route path="/login" element={<Login />}/>
+                      <Route path="/register" element={<Register/>}/>
                       <Route path="/product" element={<Product />}/>
                       <Route path="/check_order" element={<CheckOrder />}/>
                       <Route path="/check_out" element={<CheckOut />}/>

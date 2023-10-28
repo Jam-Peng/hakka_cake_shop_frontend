@@ -48,11 +48,11 @@ function UserOrderList({ order }) {
               <BsTags size={20} />
               <span className='tracking-wide'>訂單編號</span>
             </div>
-            <span>{ order_id }</span>
+            <span>{order_id}</span>
           </div>
           <div className="flex items-center space-x-2">
             <SlCalender size={20} />
-            <span>{ userOrderTime}</span>
+            <span>{userOrderTime}</span>
           </div>
         </div>
         

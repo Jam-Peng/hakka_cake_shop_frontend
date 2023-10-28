@@ -1,6 +1,6 @@
 import logo from '../assets/logo.png'
 import { BiLogOut } from "react-icons/bi"
-import { BsFillPersonFill, BsPersonVcard, BsReceipt } from "react-icons/bs";
+import { BsFillPersonFill, BsPersonVcard, BsReceipt, BsFillGridFill } from "react-icons/bs";
 import { MdOutlinePayment } from "react-icons/md"
 import { useContext } from "react"
 import { Link } from 'react-router-dom'
@@ -29,7 +29,8 @@ function Header() {
           </div>
         
           <div>
-            <Link to={'/product'} rel="noopener noreferrer">
+            <Link to={'/product'} rel="noopener noreferrer" className='flex items-center space-x-1'>
+              <BsFillGridFill size={20} color='#1f2937'/>
               <span className="text-base">所有商品</span>
             </Link>
           </div>
