@@ -102,12 +102,14 @@ function UserProfileProvider({ children }) {
   // 刪除預覽的圖片
   const removeImage = (index) => {
     setPreviewImage((prevPreviewImage) => {
-    const newPreviewImage = [...prevPreviewImage];
-    newPreviewImage.splice(index, 1);
-    return newPreviewImage;
-  });
-  // 刪除整個屬性
-  delete formAccount.image
+      if (prevPreviewImage) {
+        const newPreviewImage = [...prevPreviewImage];
+        newPreviewImage.splice(index, 1);
+        return newPreviewImage;
+      }
+    });
+    // 刪除整個屬性
+    delete formAccount.image
   };
   
   // 清空表單資料
@@ -118,6 +120,10 @@ function UserProfileProvider({ children }) {
       image: null,
     });
     setCheckPassword('')
+    const fileInput = document.querySelector('input[type="file"]');
+    if (fileInput) {
+      fileInput.value = ''; 
+    }
   }
 
 

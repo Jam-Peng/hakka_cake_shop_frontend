@@ -12,6 +12,7 @@ function UserAccount() {
 
   const { username, name, email, image } = clientProfile
   const imgHostUrl = "http://127.0.0.1:8000"
+
   // 處理 onChange同步輸入資料
   const handleDataChange = (e) => {
     const { name, value } = e.target;
@@ -45,16 +46,15 @@ function UserAccount() {
     getClientProfile()
   },[getClientProfile])
 
-
   return (
     <section>
       <div className="space-y-6 text-[0.9rem]">
         <div className="flex flex-col space-y-4 border-b py-4">
           <div> 
               {image ?
-                <img src={`${imgHostUrl}${image}`} alt="" className="w-24 h-24 border rounded-md"/> 
+                <img src={`${imgHostUrl}${image}`} alt="大頭照" className="w-24 h-24 border rounded-md"/> 
               :
-                <img src={user_img} alt="" className="w-24 h-24 border rounded-md"/> 
+                <img src={user_img} alt="大頭照" className="w-24 h-24 border rounded-md"/> 
               }
           </div>
 
@@ -103,7 +103,7 @@ function UserAccount() {
 
                     <div>
                       <div>
-                        {previewImage !== null ?
+                        {previewImage ?
                           previewImage.map((item,index) => (
                             <div className="space-y-2" key={index}>
                               <img className="border rounded-lg h-32 w-32" src={item.preview} alt="預覽圖片" />
