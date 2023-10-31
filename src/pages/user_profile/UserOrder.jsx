@@ -21,7 +21,6 @@ function UserOrder() {
     }
   },[getOrders, authToken, currentUser, navigate, user_id, getProductsForOrder])
 
-
   return (
     <section className="space-y-6 text-slate-800 h-full">
       <div className="py-4">

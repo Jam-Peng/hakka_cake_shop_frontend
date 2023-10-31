@@ -37,7 +37,6 @@ function CheckOut() {
     setOpenCheckInfo(!openCheckInfo)
   }
 
-
   return (
     <section className="container mx-auto">
       <div className="sm:px-28 space-y-4 mb-20">

@@ -7,7 +7,6 @@ export const HeaderContext = createContext()
 function HeaderProvider({ children }) {
   const [accountSet, setAccountSet] = useState(false)
 
-
   const contextData = {
     accountSet : accountSet,
     setAccountSet : setAccountSet,

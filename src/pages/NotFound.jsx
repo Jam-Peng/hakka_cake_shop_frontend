@@ -15,7 +15,6 @@ function NotFound() {
     }, 1000);
   }, [countdown, navigate]);
 
-
   return (
     <section className="min-h-screen flex items-center justify-center ">
       <div className="text-slate-800 border rounded-lg shadow-md p-10 bg-gray-100">

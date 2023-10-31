@@ -126,7 +126,6 @@ function UserProfileProvider({ children }) {
     }
   }
 
-
   const contextData = {
     userOrders : userOrders,
     openOrderItem : openOrderItem,

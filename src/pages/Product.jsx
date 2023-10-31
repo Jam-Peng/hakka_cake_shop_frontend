@@ -5,12 +5,11 @@ import ProductList from '../components/product/ProductList'
 import { AuthContext } from '../context/AuthContext'
 import { ProductContext } from '../context/ProductContext'
 
-
 function Product() {
   document.title = '客家糕粿店 | 所有商品'
   const { authToken } = useContext(AuthContext)
   const { products, allProducts, getProducts, categoryByProducts, openProductList,
-    isOpenList, } = useContext(ProductContext)
+    isOpenList } = useContext(ProductContext)
   
   const categorys = []
 
@@ -47,7 +46,7 @@ function Product() {
         <div className='flex'>
           <div className='hidden sm:block sm:w-3/12 overflow-y-auto'>
             <div className="flex flex-col space-y-2 p-4">
-              <div className="flex items-center space-x-12" >
+              <div className="flex items-center space-x-12">
                 <span className="cursor-pointer hover:text-gray-500" onClick={getProducts}>所有商品</span>
                 <div onClick={ openProductList }>
                   <IoIosArrowDown size={20} className={`transform ${isOpenList ? 'rotate-180' : ''} hover:text-rose-500 cursor-pointer`}/>

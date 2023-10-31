@@ -84,7 +84,6 @@ function CartProvider({ children }) {
     setCart([]);
   };
 
-
   const contextData = {
     cart : cart,
     setCart: setCart,
