@@ -7,7 +7,7 @@ function Login() {
   document.title = '客家糕粿店 | 登入'
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const { loginUser } = useContext(AuthContext)
+  const { loginUser, clientMessage } = useContext(AuthContext)
 
   return (
     <section>
@@ -17,6 +17,14 @@ function Login() {
             <span>會員登入</span>
           </div>
           <div className="py-6 px-4">
+          <div className="pb-4">
+              {clientMessage ? 
+                <span className="text-rose-500">{clientMessage}</span>
+              :
+                null
+              }
+            </div>
+
             <form action="" className="space-y-6" onSubmit={loginUser}>
               <div className="flex items-center space-x-4">
                 <label htmlFor="username">

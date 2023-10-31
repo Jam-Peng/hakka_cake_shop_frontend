@@ -39,8 +39,12 @@ function AuthProvider({ children }) {
       navigate('/')
       cleanForm()
     } else {
-      alert('無法取得連線')
+      // alert('無法取得連線')
+      setClientMessage("帳號或密碼有誤")
     }
+    setTimeout(() => {
+      setClientMessage('')
+    }, 1800)
   }
 
   // 註冊
