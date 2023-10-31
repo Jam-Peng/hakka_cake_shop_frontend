@@ -18,7 +18,6 @@ function CheckOut() {
   const { openCheckInfo, setOpenCheckInfo, orderFormData, setOrderFormData,
           sendCheckForm, check_Terms, setCheck_Terms, checkOutMessage} = useContext(CheckOutContext)
 
-
   useEffect(() => {
     if (!currentUser) {
       navigate('/login')
@@ -121,7 +120,7 @@ function CheckOut() {
                   />
                 </div>
                 <div>
-                  <input type="text" id="email" name="email"
+                  <input type="email" id="email" name="email"
                     value={orderFormData.email}       
                     onChange={handleCheckFormChange}       
                     className="checkout_form"
