@@ -1,7 +1,8 @@
 import Header from '../components/Header'
 import { Outlet } from 'react-router-dom'
-import Footer from '../components/Footer'
 import ProductDetail from '../components/product/ProductDetail'
+import Footer from '../components/Footer'
+import MobileFooter from '../components/MobileFooter'
 
 function Dashboard() {
   return (
@@ -17,8 +18,11 @@ function Dashboard() {
         </div>  
       </div>
 
-      <div className='fixed bottom-0 w-full bg-gray-200'>
+      <div className='hidden sm:block sm:fixed bottom-0'>
         <Footer/>
+      </div>
+      <div className='sm:hidden fixed bottom-0'>
+        <MobileFooter/>
       </div>
     </section>
   )

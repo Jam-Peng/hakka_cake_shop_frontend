@@ -10,16 +10,14 @@ function UserOrder() {
   const { getOrders, userOrders, getProductsForOrder } = useContext(UserProfileContext)
   const { currentUser, authToken } = useContext(AuthContext)
 
-  const user_id = currentUser.user_id
-
   useEffect(() => {
     if (!currentUser) {
       navigate('/')
     } else {
-      getOrders(user_id, authToken)
+      getOrders(currentUser.user_id, authToken)
       getProductsForOrder()
     }
-  },[getOrders, authToken, currentUser, navigate, user_id, getProductsForOrder])
+  },[getOrders, authToken, currentUser, navigate, getProductsForOrder])
 
   return (
     <section className="space-y-6 text-slate-800 h-full">

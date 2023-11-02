@@ -14,7 +14,7 @@ function Header() {
   const { itemAmount } = useContext(CartContext)
 
   return (
-    <header className='border' onMouseLeave={()=>{setAccountSet(false)}}>
+    <header className='' onMouseLeave={()=>{setAccountSet(false)}}>
       <div className="container mx-auto py-2 px-4 flex items-center justify-between h-full">
         <div className="flex items-center space-x-4">
           <div>
@@ -28,7 +28,7 @@ function Header() {
             </Link>
           </div>
         
-          <div>
+          <div className="hidden sm:block">
             <Link to={'/product'} rel="noopener noreferrer" className='flex items-center space-x-1'>
               <BsFillGridFill size={20} color='#1f2937'/>
               <span className="text-base">所有商品</span>
@@ -45,21 +45,21 @@ function Header() {
               </button>  
             </div>
             :
-            <div>
+            <div className="hidden sm:block">
               <Link to={'/login'} className="flex items-center space-x-1">
                 <BsFillPersonFill size={20}/>
                 <span>登入</span>
               </Link>
             </div>
           }
-          <div className="header_btn px-2 py-0.3">
+          <div className="header_btn px-2 py-0.3 hidden sm:block">
             <Link to={'/check_order'} rel="noopener noreferrer"
               className="flex items-center space-x-1">
-                <MdOutlinePayment size={25} />
-                <div className="bg-rose-500 absolute -right-2 -bottom-1 text-sm w-[19px] h-[19px] 
-                    text-gray-50 rounded-full flex justify-center items-center">
-                  <span>{ itemAmount }</span>
-                </div>
+              <MdOutlinePayment size={25} />
+              <div className="bg-rose-500 absolute -right-2 -bottom-1 text-sm w-[19px] h-[19px] 
+                  text-gray-50 rounded-full flex justify-center items-center">
+                <span>{ itemAmount }</span>
+              </div>
               <span>結帳</span>
             </Link>
           </div>

@@ -4,13 +4,18 @@ import { LuShieldCheck } from "react-icons/lu"
 import { BiSolidEditAlt } from "react-icons/bi";
 import { useContext, useEffect } from "react"
 import { UserProfileContext } from "../../context/UserProfileContext"
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function UserAccount() {
   document.title = '客家糕粿店 | 會員中心'
+  const { currentUser } = useContext(AuthContext)
+  const navigate = useNavigate()
   const { getClientProfile, clientProfile, formAccount, setFormAccount, accountMessage, checkPassword, setCheckPassword,
           sendUpdateClient, previewImage, setPreviewImage, removeImage } = useContext(UserProfileContext)
 
   const { username, name, email, image } = clientProfile
+
   const imgHostUrl = "http://127.0.0.1:8000"
 
   // 處理 onChange同步輸入資料
@@ -43,8 +48,13 @@ function UserAccount() {
   }
 
   useEffect(() => {
-    getClientProfile()
-  },[getClientProfile])
+    if (!currentUser) {
+      navigate('/login')
+    } else {
+      getClientProfile()
+    }
+    
+  },[getClientProfile, currentUser, navigate])
 
   return (
     <section>
