@@ -11,7 +11,7 @@ function Home() {
           <Banner/>
         </div>
         <div className="sm:hidden">
-          <img src={mobileSlider} alt="" />
+          <img src={mobileSlider} alt="手機版Slider"/>
         </div>
       </div>
 

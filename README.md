@@ -1,70 +1,147 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+<img width="20%" src="./public/logo.png">
 
-## Available Scripts
+# 客家糕粿店 - 網站全端專案
+</div>
 
-In the project directory, you can run:
+> ⚠ 測試請同時下載前、後台資料包 : <br>
+Frontend --> https://github.com/Jam-Peng/hakka_cake_shop_frontend <br>
+Server --> https://github.com/Jam-Peng/hakka_cake_shop_server
 
-### `npm start`
+###  Preview :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<table width="100%"> 
+<tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Fontend | Home
+</p>
+<img src="./public/front_home.png">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Fontend | Product 
+</p>
+<img src="./public/front_product.png">
+</td>
+</tr>
+<tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Mobile | Home
+</p>
+<center>
+<img src="./public/mobile_home.png" width='65%'>
+</center>
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Mobile | Product 
+</p>
+<center>
+<img src="./public/mobile_product.png" width='65%'>
+</center>
+</td>
+</tr>
+</table>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#
 
-### `npm test`
+## 設計動機
+- 幫舅舅的客家手作糕點設計一個網路商店與後台管理系統。
+- 使用 Django 撰寫 API 將前、後端做資料的整合與應用。
+- <a href="https://drive.google.com/file/d/1MIN3X9e8rf6s-wNaw6T52tyrQcTn7GsT/view?usp=sharing" target="_blank">開啟線上完整專案介紹</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#
+### 使用環境
+- `JavaScript`。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+### 使用技術
+- 以 `React` 框架開發。
+- 使用 `Tailwind CSS` 框架與手刻 `CSS` 進行切版。
+- 使用 `React` 的 `createContext`，作為狀態管理工具。
+- 使用 `react-slick` 套件製作 Slider 輪播圖。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 使用套件
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `react-icons`
+- `Tailwind`
+- `jwt-decode`
+- `react-slick`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 如何執行 - `前、後台`
+--> 使用 Zip 下載專案或使用下面的指令下載
+```bash
+git clone https://github.com/Jam-Peng/hakka_cake_shop_frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git clone https://github.com/Jam-Peng/hakka_cake_shop_backend
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+--> 進入前台資料包
+```bash
+cd frontend
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+--> 或進入後台資料包
+```bash
+cd backendend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+--> 安裝專案需求 dependencies
+```bash
+npm install
+```
 
-## Learn More
+--> 執行專案
+```bash
+npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 如何執行 - `伺服器`
+--> 使用 Zip 下載專案或使用下面的指令下載
+```bash
+git clone https://github.com/Jam-Peng/hakka_cake_shop_server.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+--> 進入server資料包
+```bash
+cd server
+```
 
-### Code Splitting
+--> 建立虛擬環境
+```bash
+conda create --name venv python=3.9
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+--> 執行虛擬環境
+```bash
+conda activate venv
+```
 
-### Analyzing the Bundle Size
+--> 安裝套件
+```bash
+pip install -r requirements.txt
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+--> 數據庫遷移
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--> 運行伺服器
+```bash
+python manage.py runserver
+```

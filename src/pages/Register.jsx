@@ -46,7 +46,7 @@ function Register() {
                 </label>
                 <div className="w-10/12">
                   <input id="clientName" name="clientName" type="text" autoComplete="clientName"
-                    placeholder="Account / 會員姓名"
+                    placeholder="Name / 會員姓名"
                     value={clientName}
                     onChange={e => setClientName(e.target.value.trim())}
                     className="input_set"/>
@@ -58,7 +58,7 @@ function Register() {
                 </label>
                 <div className="w-10/12">
                   <input id="email" name="email" type="email" autoComplete="email" required
-                    placeholder="Account / Email"
+                    placeholder="Email / 信箱"
                     value={email}
                     onChange={e => setEmail(e.target.value.trim())}
                     className="input_set"/>
@@ -70,7 +70,7 @@ function Register() {
                 </label>
                 <div className="w-10/12">
                   <input id="password1" name="password1" type="password" autoComplete="password1" required
-                    placeholder="Password1 / 會員密碼" 
+                    placeholder="Password / 會員密碼" 
                     value={password1}
                     onChange={e => setPassword1(e.target.value.trim())}
                     className="input_set"/>
@@ -82,7 +82,7 @@ function Register() {
                 </label>
                 <div className="w-10/12">
                   <input id="password2" name="password2" type="password" autoComplete="password2" required
-                    placeholder="Check Password2 / 確認密碼" 
+                    placeholder="Check Password / 確認密碼" 
                     value={password2}
                     onChange={e => setPassword2(e.target.value.trim())}
                     className="input_set"/>
