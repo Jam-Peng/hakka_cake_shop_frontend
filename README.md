@@ -6,7 +6,7 @@
 </div>
 
 > ⚠ 測試請同時下載前、後台資料包 : <br>
-Frontend --> https://github.com/Jam-Peng/hakka_cake_shop_frontend <br>
+Backend --> https://github.com/Jam-Peng/hakka_cake_shop_backend <br>
 Server --> https://github.com/Jam-Peng/hakka_cake_shop_server
 
 ###  Preview :
